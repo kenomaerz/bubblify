@@ -1,1 +1,1 @@
-from .Bubblify import *
+from .bubblify import *
