@@ -15,3 +15,7 @@ test.py
 result1\.svg
 
 result2\.svg
+
+*.pdf
+
+*.png

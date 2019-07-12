@@ -15,6 +15,7 @@ def bubblify(source: str, primary_color, bg_color, target: str):
 
     coordinates = fix_viewbox(root.attrib["viewBox"])
     root.attrib["viewBox"] = coordinates["viewBox"]
+    insert_circle(root, coordinates, bg_color)
 
     to_delete = []
     g = None
@@ -25,7 +26,6 @@ def bubblify(source: str, primary_color, bg_color, target: str):
             to_delete.append(child)
 
     colorize(g, primary_color)
-    insert_circle(root, coordinates, bg_color)
 
     for candidate in to_delete:
         root.remove(candidate)
@@ -61,13 +61,13 @@ def fix_viewbox(viewbox: str):
     result["y1"] = result["x1"]
     # build viewBox string
     result["viewBox"] = (
-        str(result["x0"])
+        str(result["x0"] - 5)
         + " "
-        + str(result["y0"])
+        + str(result["y0"] - 5)
         + " "
-        + str(result["x1"])
+        + str(result["x1"] + 10)
         + " "
-        + str(result["y1"])
+        + str(result["y1"] + 10)
     )
     return result
 
