@@ -9,3 +9,9 @@ __pycache__
 
 # private testing files that may contain access keys
 test.py
+
+\.vscode/settings\.json
+
+result1\.svg
+
+result2\.svg
